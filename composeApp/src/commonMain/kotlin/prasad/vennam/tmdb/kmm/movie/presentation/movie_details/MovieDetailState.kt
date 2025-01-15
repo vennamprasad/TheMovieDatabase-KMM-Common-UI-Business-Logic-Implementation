@@ -6,6 +6,7 @@ import prasad.vennam.tmdb.kmm.movie.domain.MovieDetails
 data class MovieDetailState(
     val movieId: Int? = null,
     val movieDetails: MovieDetails? = null,
+    val isFavorite: Boolean = false,
     val isLoading: Boolean = false,
     val error: UiText? = null
 )

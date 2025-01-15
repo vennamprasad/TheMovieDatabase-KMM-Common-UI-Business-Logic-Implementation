@@ -28,11 +28,13 @@ fun App() {
                     }
                 }
                 composable<Route.MovieDetail> { entry ->
-                    val args = entry.toRoute<Route.MovieDetail>()
+                    val args = entry.toRoute<Route.MovieDetail>().id
                     val viewmodel = koinViewModel<MovieDetailsViewmodel>()
-                    MovieDetailsScreenRoot(viewmodel, args.id, onBack = {
-                        navController.popBackStack()
-                    })
+                    MovieDetailsScreenRoot(
+                        viewmodel, {
+                            navController.popBackStack()
+                        }
+                    )
                 }
             }
         }
